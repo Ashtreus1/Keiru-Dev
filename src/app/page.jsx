@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-import { About } from "@/components/landing page/About";
+import { About } from "@/components/landing page/AboutOverview";
 import { HeroSection } from "@/components/landing page/HeroSection";
 
 export default function Home() {

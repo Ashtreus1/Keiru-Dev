@@ -1,11 +1,10 @@
 "use client"
 import React from 'react';
-import Dots from "../decorations/Dots";
 
 export const HeroSection = () => {
     return (
         <section id="home" className="relative">
-            <div className="hero min-h-screen bg-base-200 relative border-b-4 border-cyan-500">
+            <div className="hero min-h-screen relative">
                 <div className="hero-content text-center mx-5">
                     <div className="max-w-3xl mx-auto">
                         <h1 className="text-6xl font-bold">Hello I'm <span className="text-cyan-300">Jameson</span></h1>
@@ -19,13 +18,7 @@ export const HeroSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="absolute bottom-5 left-0  w-full bg-cyan-500 glow-effect" />
             </div>
-            <style jsx>{`
-                .glow-effect {
-                    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-                }
-            `}</style>
         </section>
     );
 }
