@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { About } from "@/components/landing page/AboutOverview";
 import { HeroSection } from "@/components/landing page/HeroSection";
+import ProjectOverview from "@/components/landing page/ProjectOverview";
 
 export default function Home() {
   const [showAlert, setShowAlert] = useState(true);
@@ -27,6 +28,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <About />
+        <ProjectOverview/>
       </main>
     </>
   );
