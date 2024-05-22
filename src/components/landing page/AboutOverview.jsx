@@ -1,19 +1,41 @@
 "use client"
+import React from 'react';
 import Balancer from 'react-wrap-balancer';
 import Dots from '../decorations/Dots';
+import { motion, useInView } from 'framer-motion';
+
+const containerVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.3 } }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
 
 export const About = () => {
+    const ref = React.useRef(null);
+    const isInView = useInView(ref, { once: false });
+
     return (
-        <section className="py-16 relative">
+        <section className="py-16 relative" ref={ref}>
             <div className="absolute right-20 top-[90px] z-[-1]">
                 <Dots h="130" w="130" />
             </div>
             <div className="absolute left-20 bottom-[90px] z-[-1]">
                 <Dots h="130" w="130" />
             </div>
-            <div className="container mx-auto px-4">
-                <h2 className="text-5xl font-bold text-center mb-8">About Me</h2>
-                <div className="max-w-4xl mx-auto text-center">
+            <motion.div 
+                className="container mx-auto px-4"
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={containerVariants}
+            >
+                <motion.h2 className="text-5xl font-bold text-center mb-8" variants={itemVariants}>
+                    About Me
+                </motion.h2>
+                <motion.div className="max-w-4xl mx-auto text-center" variants={itemVariants}>
                     <Balancer className="text-lg leading-7 mb-8">
                         Hello, I'm Jameson, an <span className="text-cyan-400 font-bold">aspiring software developer</span> and <span className="text-cyan-400 font-bold">tech enthusiast</span>.
                         I've been developing and enhancing my skills for more than <span className='text-cyan-400 font-bold'>3 years</span>,
@@ -35,8 +57,8 @@ export const About = () => {
                         Thank you for taking the time to learn more about me. I look forward to connecting and
                         potentially collaborating on exciting projects!
                     </Balancer>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 }
