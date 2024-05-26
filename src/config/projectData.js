@@ -1,22 +1,22 @@
 const projectData = [
     {
-        title: 'Travel Destinations',
+        title: 'Keiru Dev',
         image: 'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg',
-        description: 'Explore the most beautiful travel destinations around the world.',
-        categories: ['Travel', 'Adventure'],
+        description: 'My official personal portfolio website.',
+        categories: ['Portfolio', 'Personal'],
         isNew: true
     },
     {
-        title: 'Recipe App',
+        title: 'Text Summarization Tool Website',
         image: 'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg',
-        description: 'Discover delicious recipes and cooking tips.',
-        categories: ['Food', 'Cooking'],
-        isNew: false
+        description: 'Summarization Tool from scratch using the naive summarisation algorithm, built with Laravel Framework',
+        categories: ['Tool', 'Summarization'],
+        isNew: true
     },
     {
-        title: 'Fitness Tracker',
+        title: 'TicTacToe',
         image: 'https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg',
-        description: 'Track your fitness progress and set goals.',
+        description: 'A Java GUI 2d Game with AI Integration built ',
         categories: ['Fitness', 'Health'],
         isNew: true
     },
