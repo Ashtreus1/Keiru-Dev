@@ -1,11 +1,11 @@
+import Projects from "@/components/Projects/Projects";
 
-
-const Projects = () => {
+const Project = () => {
     return(
         <>
-            
+            <Projects/>
         </>
     );
 }
 
-export default Projects;
+export default Project;

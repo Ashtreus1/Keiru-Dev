@@ -2,7 +2,7 @@ import socialLinks from '@/config/links';
 
 export const Footer = () => {
     return (
-        <footer className="bg-cyan-700 text-neutral-content">
+        <footer className="border-t border-cyan-500">
             <div className="container mx-auto py-8 flex flex-col lg:flex-row items-center justify-between">
                 <div className="flex flex-col lg:flex-row items-center">
                     <h2 className="text-2xl font-bold">Keiru Dev</h2>
