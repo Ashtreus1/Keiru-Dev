@@ -17,24 +17,26 @@ const workExperienceData = [
 
 const WorkExperience = () => {
   return (
-    <div className="p-4 md:mb-10 md:mx-20">
-      <h2 className="text-4xl font-bold mb-4">Work Experience</h2>
-      {workExperienceData.map((item, index) => (
-        <div key={index} tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-200 mb-4">
-          <div className="collapse-title text-xl font-medium">
-            {item.title}: <span className="text-cyan-500">{item.date}</span>
+    <div className="min-h-screen p-6 flex items-center justify-center">
+      <div className="w-full max-w-5xl">
+        <h2 className="text-4xl font-bold mb-8">Work Experience</h2>
+        {workExperienceData.map((item, index) => (
+          <div key={index} tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-200 mb-4 rounded-lg shadow-lg">
+            <div className="collapse-title text-xl font-medium">
+              {item.title}: <span className="text-cyan-500">{item.date}</span>
+            </div>
+            <div className="collapse-content p-4">
+              <p>{item.description}</p>
+              <h3 className="text-lg font-semibold mt-2">Job Role</h3>
+              <ul className="list-disc list-inside ml-4">
+                {item.roles.map((role, i) => (
+                  <li key={i}>{role}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="collapse-content ml-4">
-            <p>{item.description}</p>
-            <h3 className="text-lg font-semibold mt-2">Job Role</h3>
-            <ul className="list-disc list-inside ml-4">
-              {item.roles.map((role, i) => (
-                <li key={i}>{role}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

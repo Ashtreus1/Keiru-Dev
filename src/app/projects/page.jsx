@@ -2,9 +2,9 @@
 
 const Projects = () => {
     return(
-        <section>
-            On development
-        </section>
+        <>
+            
+        </>
     );
 }
 
