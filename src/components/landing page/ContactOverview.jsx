@@ -7,7 +7,7 @@ const ContactOverview = () => {
             <div className="mx-4 md:mx-20">
                 <div className="p-4">
                     <h2 className="text-3xl md:text-5xl text-cyan-500 font-bold text-center mb-4">Interact with Me</h2>
-                    <p className="text-center text-gray-700 mb-8">
+                    <p className="text-center mb-8">
                         I'm always open to discuss new projects, <br />
                         creative ideas, or opportunities to be part of your vision. <br />
                         <span className='text-cyan-500 font-bold'>Reach out</span> and <span className='text-cyan-500 font-bold'>let's start a conversation!</span>
