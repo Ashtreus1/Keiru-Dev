@@ -15,3 +15,26 @@ export const InstagramIcon = () => (
         <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
     </svg>
 );
+
+
+export const techStack = [
+    { name: 'Java', icon: 'https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png' },
+    { name: 'Javascript', icon: 'https://img.icons8.com/color/48/000000/javascript--v1.png' },
+    { name: 'HTML5 & CSS3', icon: 'https://img.icons8.com/color/48/000000/html-5--v1.png' },
+    { name: 'Python', icon: 'https://img.icons8.com/color/48/000000/python--v1.png' },
+    { name: 'PHP', icon: 'https://img.icons8.com/officel/48/000000/php-logo.png' },
+    { name: 'C++', icon: 'https://img.icons8.com/color/48/000000/c-plus-plus-logo--v1.png' },
+    { name: 'MYSQL', icon: 'https://img.icons8.com/ios/48/000000/mysql-logo.png' },
+    { name: 'Firebase', icon: 'https://img.icons8.com/color/48/000000/firebase.png' },
+    { name: 'SQLite', icon: 'https://img.icons8.com/ios/48/000000/sqlite.png' },
+    { name: 'React', icon: 'https://img.icons8.com/plasticine/100/000000/react.png' },
+    { name: 'Laravel', icon: 'https://img.icons8.com/fluency/48/000000/laravel.png' },
+    { name: 'NextJS', icon: 'https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000' },
+    { name: 'Tailwindcss', icon: 'https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000' },
+    { name: 'Flask', icon: 'https://img.icons8.com/?size=100&id=MHcMYTljfKOr&format=png&color=000000' },
+    { name: 'Bootstrap', icon: 'https://img.icons8.com/color/48/000000/bootstrap.png' },
+    { name: 'DaisyUI', icon: 'https://raw.githubusercontent.com/saadeghi/daisyui-images/master/images/daisyui-logo/favicon-192.png' },
+    { name: 'ShadCN', icon: 'https://avatars.githubusercontent.com/u/139895814?s=280&v=4' },
+    { name: 'Wordpress', icon: 'https://img.icons8.com/color/48/000000/wordpress.png' },
+    { name: 'Webpack', icon: 'https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png' },
+  ];

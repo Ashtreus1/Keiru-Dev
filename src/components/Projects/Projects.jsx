@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React, { useState } from 'react';
 import projectData from '@/config/projectData';
 import { MdVisibility } from 'react-icons/md';
@@ -53,8 +54,22 @@ const Projects = () => {
                                     className="w-full h-48 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300 hover:bg-opacity-50 flex items-center justify-center space-x-4 opacity-0 hover:opacity-100">
-                                    <MdVisibility className="text-white h-10 w-10 cursor-pointer hover:text-cyan-400 transition-colors" />
-                                    <FaGithub className="text-white h-10 w-10 cursor-pointer hover:text-cyan-400 transition-colors" />
+                                    {project.live_prev !== null && project.live_prev !== '' ? (
+                                        <div className="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300 hover:bg-opacity-50 flex items-center justify-center space-x-4 opacity-0 hover:opacity-100">
+                                            <Link href={project.live_prev}>
+                                                <MdVisibility className="text-white h-10 w-10 cursor-pointer hover:text-cyan-400 transition-colors" />
+                                            </Link>
+                                            <Link href={project.repo_link}>
+                                                <FaGithub className="text-white h-10 w-10 cursor-pointer hover:text-cyan-400 transition-colors" />
+                                            </Link>
+                                        </div>
+                                    ) : (
+                                        <div className="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300 hover:bg-opacity-50 flex items-center justify-center space-x-4 opacity-0 hover:opacity-100">
+                                            <Link href={project.repo_link}>
+                                                <FaGithub className="text-white h-10 w-10 cursor-pointer hover:text-cyan-400 transition-colors" />
+                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
                             </figure>
                             <div className="p-4">
