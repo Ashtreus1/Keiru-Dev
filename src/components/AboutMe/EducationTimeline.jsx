@@ -1,34 +1,104 @@
+"use client"
 import React from 'react';
+import { motion, useInView } from 'framer-motion';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.8, ease: 'easeOut', staggerChildren: 0.3 } }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
+const iconVariants = {
+  hidden: { scale: 0 },
+  visible: { scale: 1, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
+const textVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
 
 const EducationTimeline = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center mx-10">
-      <h1 className="text-4xl font-bold mb-8">Education Timeline</h1>
-      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-        <li>
-            <div className="timeline-middle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-cyan-500"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+      <motion.h1
+        className="text-4xl font-bold mb-8"
+        variants={textVariants}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+      >
+        Education Timeline
+      </motion.h1>
+      <motion.ul
+        className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        variants={containerVariants}
+      >
+        <motion.li variants={itemVariants}>
+          <motion.div className="timeline-middle" variants={iconVariants}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5 text-cyan-500"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </motion.div>
+          <motion.div className="timeline-start md:text-end mb-10" variants={textVariants}>
+            <time className="font-mono italic text-cyan-500">Senior Highschool Level</time>
+            <div className="text-lg font-black">
+              Information and Communication Technology Strand Major in Computer Programming
             </div>
-            <div className="timeline-start md:text-end mb-10">
-                <time className="font-mono italic text-cyan-500">Senior Highschool Level</time>
-                <div className="text-lg font-black">Information and Communication Technology Strand Major in Computer Programming</div>
-                I learned the fundamentals and Object Oriented Programming in my first year of it. In second year, I learned the basics of MySQL Database and the uses of it in the real-world application.
-            </div>
-          <hr className='bg-cyan-500'/>
-        </li>
-        <li>
+            <p>
+              I learned the fundamentals and Object Oriented Programming in my first year of it. In
+              second year, I learned the basics of MySQL Database and the uses of it in the
+              real-world application.
+            </p>
+          </motion.div>
+          <hr className="bg-cyan-500" />
+        </motion.li>
+        <motion.li variants={itemVariants}>
           <hr />
-          <div className="timeline-middle">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-cyan-500"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-          </div>
-          <div className="timeline-end mb-10">
+          <motion.div className="timeline-middle" variants={iconVariants}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5 text-cyan-500"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </motion.div>
+          <motion.div className="timeline-end mb-10" variants={textVariants}>
             <time className="font-mono italic text-cyan-500">Bachelor Degree (Present)</time>
             <div className="text-lg font-black">Bachelor of Science in Information Technology</div>
-            Currently pursuing Bachelor of Science in Information Technology as my course program. Sophomore year in this present day, and have the commitment to pursue the degree of it.
-          </div>
+            <p>
+              Currently pursuing Bachelor of Science in Information Technology as my course
+              program. Sophomore year in this present day, and have the commitment to pursue the
+              degree of it.
+            </p>
+          </motion.div>
           <hr />
-        </li>
-      </ul>
+        </motion.li>
+      </motion.ul>
     </div>
   );
 };

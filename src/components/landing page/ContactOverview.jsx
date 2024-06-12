@@ -1,20 +1,40 @@
+"use client"
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { motion, useInView } from 'framer-motion';
+
+const containerVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.3 } }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
 
 const ContactOverview = () => {
+    const ref = React.useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     return (
-        <section className='mb-10'>
-            <div className="mx-4 md:mx-20">
-                <div className="p-4">
+        <section className='mb-10' ref={ref}>
+            <motion.div
+                className="mx-4 md:mx-20"
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={containerVariants}
+            >
+                <motion.div className="p-4" variants={itemVariants}>
                     <h2 className="text-3xl md:text-5xl text-cyan-500 font-bold text-center mb-4">Interact with Me</h2>
                     <p className="text-center mb-8">
                         I'm always open to discuss new projects, <br />
                         creative ideas, or opportunities to be part of your vision. <br />
                         <span className='text-cyan-500 font-bold'>Reach out</span> and <span className='text-cyan-500 font-bold'>let's start a conversation!</span>
                     </p>
-                </div>
-                <div className="flex flex-col md:flex-row mx-auto md:mx-0">
-                    <div className="w-full md:w-1/2 p-4">
+                </motion.div>
+                <motion.div className="flex flex-col md:flex-row mx-auto md:mx-0" variants={itemVariants}>
+                    <motion.div className="w-full md:w-1/2 p-4" variants={itemVariants}>
                         <form>
                             <div className="mb-4">
                                 <label className="input input-bordered rounded-btn flex items-center gap-2">
@@ -38,8 +58,8 @@ const ContactOverview = () => {
                             </div>
                             <button className="btn btn-wide hover:bg-cyan-400 hover:text-black transition-color">Send Message</button>
                         </form>
-                    </div>
-                    <div className="w-full md:w-1/2 p-4 flex flex-col justify-center items-center mb-20">
+                    </motion.div>
+                    <motion.div className="w-full md:w-1/2 p-4 flex flex-col justify-center items-center mb-20" variants={itemVariants}>
                         <h2 className="text-3xl text-cyan-500 font-bold text-center mb-4 hidden md:block">Contact me with</h2>
                         <div className="hidden md:flex gap-4 items-center">
                             <a href="#" className="text-gray-500 hover:text-cyan-500 flex items-center gap-2">
@@ -55,9 +75,9 @@ const ContactOverview = () => {
                                 Instagram
                             </a>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </motion.div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };

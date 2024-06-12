@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
-import { MdVisibility } from 'react-icons/md';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';  
 import projectData from '@/config/projectData';
 import { motion, useInView } from 'framer-motion';
 
@@ -46,7 +45,6 @@ const ProjectOverview = () => {
                             <figure className="relative">
                                 <img src={project.image} alt={project.title} />
                                 <div className="overlay absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-50 flex items-center justify-center">
-                                    <MdVisibility className="text-white h-10 w-10 mr-10 cursor-pointer hover:text-cyan-400 transition-colors" />
                                     <FaGithub className="text-white h-10 w-10 cursor-pointer hover:text-cyan-400 transition-colors" />
                                 </div>
                             </figure>

@@ -1,4 +1,21 @@
+"use client"
+import { motion, useInView } from "framer-motion";
 import React from 'react';
+
+const containerVariants = {
+  hidden: { opacity: 0, y: -50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.3 } }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.9, rotate: -5 },
+  visible: { opacity: 1, y: 0, scale: 1, rotate: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const roleVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } }
+};
 
 const workExperienceData = [
   {
@@ -16,27 +33,45 @@ const workExperienceData = [
 ];
 
 const WorkExperience = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <div className="min-h-screen p-6 flex items-center justify-center">
-      <div className="w-full max-w-5xl">
-        <h2 className="text-4xl font-bold mb-8">Work Experience</h2>
+      <motion.div
+        className="w-full max-w-5xl"
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={containerVariants}
+      >
+        <motion.h2 className="text-4xl font-bold mb-8" variants={itemVariants}>
+          Work Experience
+        </motion.h2>
         {workExperienceData.map((item, index) => (
-          <div key={index} tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-200 mb-4 rounded-lg shadow-lg">
-            <div className="collapse-title text-xl font-medium">
+          <motion.div
+            key={index}
+            tabIndex={0}
+            className="collapse collapse-plus border border-base-300 bg-base-200 mb-4 rounded-lg shadow-lg"
+            variants={itemVariants}
+          >
+            <motion.div className="collapse-title text-xl font-medium" variants={itemVariants}>
               {item.title}: <span className="text-cyan-500">{item.date}</span>
-            </div>
-            <div className="collapse-content p-4">
+            </motion.div>
+            <motion.div className="collapse-content p-4" variants={itemVariants}>
               <p>{item.description}</p>
               <h3 className="text-lg font-semibold mt-2">Job Role</h3>
               <ul className="list-disc list-inside ml-4">
                 {item.roles.map((role, i) => (
-                  <li key={i}>{role}</li>
+                  <motion.li key={i} variants={roleVariants}>
+                    {role}
+                  </motion.li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
