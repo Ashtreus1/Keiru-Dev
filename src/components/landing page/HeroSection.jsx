@@ -97,22 +97,26 @@ export const HeroSection = () => {
                 </div>
 
                 <div className="flex flex-wrap justify-center space-x-2 mt-5">
-                    <motion.button
-                        className="px-3 py-2 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-transform"
-                        variants={buttonVariants}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        Inspect C.V
-                    </motion.button>
-                    <motion.button
-                        className="px-3 py-2 border border-cyan-500 text-cyan-500 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-transform"
-                        variants={buttonVariants}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        See GitHub
-                    </motion.button>
+                    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                        <motion.button
+                            className="px-3 py-2 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-transform"
+                            variants={buttonVariants}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Inspect C.V
+                        </motion.button>   
+                    </a>
+                    <a href='https://github.com/Ashtreus1' target='_blank' rel="noopener noreferrer">
+                        <motion.button
+                            className="px-3 py-2 border border-cyan-500 text-cyan-500 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-transform"
+                            variants={buttonVariants}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            See GitHub
+                        </motion.button>
+                    </a>
                 </div>
                 <div className="flex flex-row items-center justify-center mt-5 space-x-2">
                     <h3 className="text-lg">Made with</h3>
