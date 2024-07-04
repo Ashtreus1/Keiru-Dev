@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
+import projectData from '@/config/projectData';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -58,7 +59,7 @@ export const HeroSection = () => {
                             </svg>
                         </div>
                         <div className="stat-title text-xs sm:text-sm md:text-base lg:text-lg">Experience</div>
-                        <div className="stat-value text-sm sm:text-base md:text-lg lg:text-xl">+3 years</div>
+                        <div className="stat-value text-sm sm:text-base md:text-lg lg:text-xl">3 years</div>
                     </motion.div>
 
                     <motion.div
@@ -75,7 +76,7 @@ export const HeroSection = () => {
                             </svg>
                         </div>
                         <div className="stat-title text-xs sm:text-sm md:text-base lg:text-lg">Projects Made</div>
-                        <div className="stat-value text-sm sm:text-base md:text-lg lg:text-xl">{'>'} 6</div>
+                        <div className="stat-value text-sm sm:text-base md:text-lg lg:text-xl">{projectData.length}</div>
                     </motion.div>
 
                     <motion.div
@@ -92,7 +93,7 @@ export const HeroSection = () => {
                             </svg>
                         </div>
                         <div className="stat-title text-xs sm:text-sm md:text-base lg:text-lg">Certifications</div>
-                        <div className="stat-value text-sm sm:text-base md:text-lg lg:text-xl">{'<'} 5</div>
+                        <div className="stat-value text-sm sm:text-base md:text-lg lg:text-xl">on progress</div>
                     </motion.div>
                 </div>
 

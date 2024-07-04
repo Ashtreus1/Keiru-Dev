@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';  
+import Link from 'next/link';
+import { FaGithub } from 'react-icons/fa';
 import projectData from '@/config/projectData';
 import { motion, useInView } from 'framer-motion';
 
@@ -43,7 +44,7 @@ const ProjectOverview = () => {
                     <motion.div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-4 flex justify-center" variants={itemVariants}>
                         <div className="card bg-base-100 shadow-xl p-4 relative w-full">
                             <figure className="relative">
-                                <img src={project.image} alt={project.title} />
+                                <img src={project.image} alt={project.title} className="w-full h-72 object-cover" />
                                 <div className="overlay absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-50 flex items-center justify-center">
                                     <FaGithub className="text-white h-10 w-10 cursor-pointer hover:text-cyan-400 transition-colors" />
                                 </div>
@@ -70,9 +71,11 @@ const ProjectOverview = () => {
                 animate={isInView ? "visible" : "hidden"}
                 variants={itemVariants}
             >
-                <button className="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition duration-500 ease-in-out">
-                    See more projects -{'->'}
-                </button>
+                <Link href='/projects'>
+                    <button className="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded-md transition duration-500 ease-in-out">
+                        See more projects -{'->'}
+                    </button>
+                </Link>
             </motion.div>
         </section>
     );
