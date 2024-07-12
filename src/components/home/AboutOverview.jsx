@@ -34,7 +34,7 @@ export const About = () => {
                 <Dots h="100" w="100" />
             </div>
             <motion.div
-                className="container mx-auto px-4"
+                className="min-h-screen mx-20 px-4"
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
                 variants={containerVariants}
