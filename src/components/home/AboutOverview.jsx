@@ -26,7 +26,7 @@ export const About = () => {
     const isInView = useInView(ref, { once: false });
 
     return (
-        <section className="py-8 md:py-16 relative" ref={ref}>
+        <section className="relative" ref={ref}>
             <div className="absolute right-10 top-[50px] md:right-20 md:top-[90px] z-[-1]">
                 <Dots h="100" w="100" />
             </div>
