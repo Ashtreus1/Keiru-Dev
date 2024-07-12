@@ -1,21 +1,19 @@
-"use client"
-import React from 'react';
-import { motion, useInView } from 'framer-motion';
+"use client";
+import React, { useRef } from 'react';
 import projectData from '@/config/projectData';
+import Link from 'next/link';
+import Dots from '../decorations/Dots';
+import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8, staggerChildren: 0.3 } }
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.3 } }
 };
 
 const itemVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
-};
-
-const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
 const statVariants = {
@@ -23,29 +21,29 @@ const statVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
-
-const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
-};
-
-export const HeroSection = () => {
-    const ref = React.useRef(null);
+export const About = () => {
+    const ref = useRef(null);
     const isInView = useInView(ref, { once: false });
 
     return (
-        <section id="home" className="relative">
+        <section className="py-8 md:py-16 relative" ref={ref}>
+            <div className="absolute right-10 top-[50px] md:right-20 md:top-[90px] z-[-1]">
+                <Dots h="100" w="100" />
+            </div>
+            <div className="absolute left-10 bottom-[50px] md:left-20 md:bottom-[90px] z-[-1]">
+                <Dots h="100" w="100" />
+            </div>
             <motion.div
-                ref={ref}
-                className="min-h-screen flex flex-col items-center justify-center text-center px-4"
+                className="container mx-auto px-4"
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
                 variants={containerVariants}
             >
-                <motion.h1 className="text-4xl md:text-6xl sm:text-5xl font-bold mb-4" variants={itemVariants}>
-                    Hello, I'm <span className="text-cyan-300">Jameson</span>
-                </motion.h1>
-                <div className="stats shadow flex-col md:flex-row flex-wrap justify-center overflow-hidden p-2">
+                <motion.h2 className="text-3xl md:text-5xl font-bold font-mono text-center mb-6 md:mb-8" variants={itemVariants}>
+                    About Me
+                </motion.h2>
+
+                <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 mb-8">
                     <motion.div
                         ref={ref}
                         className="stat text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl p-2 sm:p-3 md:p-4 lg:p-5"
@@ -92,42 +90,33 @@ export const HeroSection = () => {
                                 <path fill="currentColor" d="m305.975 298.814l22.704 2.383V486l-62.712-66.965V312.499l18.214 8.895zm-99.95 0l-22.716 2.383V486l62.711-66.965V312.499l-18.213 8.895zm171.98-115.78l7.347 25.574l-22.055 14.87l-1.847 26.571l-25.81 6.425l-10.803 24.314l-26.46-2.795l-18.475 19.087L256 285.403l-23.902 11.677l-18.475-19.15l-26.46 2.795l-10.803-24.313l-25.81-6.363l-1.847-26.534l-22.118-14.92l7.348-25.573l-15.594-21.544l15.644-21.52l-7.398-25.523l22.068-14.87L150.5 73.03l25.86-6.362l10.803-24.313l26.46 2.794L232.098 26L256 37.677L279.902 26l18.475 19.149l26.46-2.794l10.803 24.313l25.81 6.425l1.847 26.534l22.055 14.87l-7.347 25.574l15.656 21.407zm-49.214-21.556a72.242 72.242 0 1 0-72.242 72.242a72.355 72.355 0 0 0 72.242-72.242m-72.242-52.283a52.282 52.282 0 1 0 52.282 52.283a52.395 52.395 0 0 0-52.282-52.245z" />
                             </svg>
                         </div>
-                        <div className="stat-title text-xs sm:text-sm md:text-base lg:text-lg">Certifications</div>
-                        <div className="stat-value text-sm sm:text-base md:text-lg lg:text-xl">on progress</div>
+                        <div className="stat-title text-xs sm:text-sm md:text-base lg:text-lg">Skills</div>
+                        <div className="stat-value text-sm sm:text-base md:text-lg lg:text-xl">
+                            <div className='flex space-x-3'>
+                                <Image src="/icons/react.png" width={30} height={30} alt="React" className="rounded-full opacity-75 border-2 border-dashed border-black" />
+                                <Image src="/icons/daisyui.png" width={30} height={30} alt="DaisyUI" className="rounded-full opacity-75 border-2 border-dashed border-black" />
+                                <Image src="/icons/tailwindcss.png" width={30} height={30} alt="Tailwind CSS" className="rounded-full opacity-75 border-2 border-dashed border-black" />
+                            </div>
+                            and more...
+                        </div>
                     </motion.div>
                 </div>
 
-                <div className="flex flex-wrap justify-center space-x-2 mt-5">
-                    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-                        <motion.button
-                            className="px-3 py-2 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-transform"
-                            variants={buttonVariants}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Inspect C.V
-                        </motion.button>   
-                    </a>
-                    <a href='https://github.com/Ashtreus1' target='_blank' rel="noopener noreferrer">
-                        <motion.button
-                            className="px-3 py-2 border border-cyan-500 text-cyan-500 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-transform"
-                            variants={buttonVariants}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            See GitHub
-                        </motion.button>
-                    </a>
-                </div>
-                <div className="flex flex-row items-center justify-center mt-5 space-x-2">
-                    <h3 className="text-lg">Made with</h3>
-                    <div className="flex flex-row gap-3">
-                        <img src="https://img.icons8.com/plasticine/200/000000/react.png" alt="React" className="rounded-full w-10 h-10 opacity-75 border-2 border-dashed border-black" />
-                        <img src="https://raw.githubusercontent.com/saadeghi/daisyui-images/master/images/daisyui-logo/favicon-192.png" alt="DaisyUI" className="rounded-full w-10 h-10 opacity-75 border-2 border-dashed border-black" />
-                        <img src="https://avatars.githubusercontent.com/u/67109815?s=200&v=4" alt="Tailwind CSS" className="rounded-full w-10 h-10 opacity-75 border-2 border-dashed border-black" />
-                    </div>
-                </div>
+                <motion.div
+                    className="text-center"
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    variants={containerVariants}
+                >
+                    <Link href="/abouts">
+                        <button className="btn-wide py-4 font-semibold border border-cyan-500 bg-transparent hover:bg-cyan-700 transition-all duration-300 ease-in-out">
+                            Get to Know Me {'->'}
+                        </button>
+                    </Link>
+                </motion.div>
             </motion.div>
         </section>
     );
 };
+
+export default About;

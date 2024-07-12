@@ -5,6 +5,7 @@ import projectData from '@/config/projectData';
 import { MdVisibility } from 'react-icons/md';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -67,10 +68,12 @@ const Projects = () => {
                         >
                             <div className="card bg-base-100 shadow-xl p-4 relative w-full">
                                 <figure className="relative">
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-72 object-cover"
+                                        width={500} 
+                                        height={320}
+                                        className="w-full h-64 object-cover"
                                     />
                                     <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-50 flex items-center justify-center">
                                         {project.live_prev !== null && project.live_prev !== '' ? (

@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { techStack } from '@/config/icons';
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -43,7 +44,7 @@ const Skills = () => {
             className="flex flex-col items-center text-center p-4 transition-transform transform hover:scale-105 hover:bg-cyan-700 cursor-pointer"
             variants={itemVariants}
           >
-            <img src={tech.icon} alt={tech.name} className="h-12 w-12 mb-2" />
+            <Image src={tech.icon} alt={tech.name}  width={48} height={48}  className="mb-2" />
             <h2 className="text-sm font-semibold">{tech.name}</h2>
           </motion.div>
         ))}

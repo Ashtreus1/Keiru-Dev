@@ -1,3 +1,6 @@
+
+
+
 export const FacebookIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current cursor-pointer">
         <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
@@ -18,23 +21,23 @@ export const InstagramIcon = () => (
 
 
 export const techStack = [
-    { name: 'Java', icon: 'https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png' },
-    { name: 'Javascript', icon: 'https://img.icons8.com/color/48/000000/javascript--v1.png' },
-    { name: 'HTML5 & CSS3', icon: 'https://img.icons8.com/color/48/000000/html-5--v1.png' },
-    { name: 'Python', icon: 'https://img.icons8.com/color/48/000000/python--v1.png' },
-    { name: 'PHP', icon: 'https://img.icons8.com/officel/48/000000/php-logo.png' },
-    { name: 'C++', icon: 'https://img.icons8.com/color/48/000000/c-plus-plus-logo--v1.png' },
-    { name: 'MYSQL', icon: 'https://img.icons8.com/ios/48/000000/mysql-logo.png' },
-    { name: 'Firebase', icon: 'https://img.icons8.com/color/48/000000/firebase.png' },
-    { name: 'SQLite', icon: 'https://img.icons8.com/ios/48/000000/sqlite.png' },
-    { name: 'React', icon: 'https://img.icons8.com/plasticine/100/000000/react.png' },
-    { name: 'Laravel', icon: 'https://img.icons8.com/fluency/48/000000/laravel.png' },
-    { name: 'NextJS', icon: 'https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000' },
-    { name: 'Tailwindcss', icon: 'https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000' },
-    { name: 'Flask', icon: 'https://img.icons8.com/?size=100&id=MHcMYTljfKOr&format=png&color=000000' },
-    { name: 'Bootstrap', icon: 'https://img.icons8.com/color/48/000000/bootstrap.png' },
-    { name: 'DaisyUI', icon: 'https://raw.githubusercontent.com/saadeghi/daisyui-images/master/images/daisyui-logo/favicon-192.png' },
-    { name: 'ShadCN', icon: 'https://avatars.githubusercontent.com/u/139895814?s=280&v=4' },
-    { name: 'Wordpress', icon: 'https://img.icons8.com/color/48/000000/wordpress.png' },
-    { name: 'Webpack', icon: 'https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png' },
+    { name: 'Java', icon: '/icons/java.png' },
+    { name: 'Javascript', icon: '/icons/javascript.png' },
+    { name: 'HTML5 & CSS3', icon: '/icons/html.png' },
+    { name: 'Python', icon: '/icons/python.png' },
+    { name: 'PHP', icon: '/icons/php.png' },
+    { name: 'C++', icon: '/icons/c++.png' },
+    { name: 'MYSQL', icon: '/icons/mysql.png' },
+    { name: 'Firebase', icon: '/icons/firebase.png' },
+    { name: 'SQLite', icon: '/icons/sqlite.png' },
+    { name: 'React', icon: '/icons/react.png' },
+    { name: 'Laravel', icon: '/icons/laravel.png' },
+    { name: 'NextJS', icon: '/icons/nextjs.png' },
+    { name: 'Tailwindcss', icon: '/icons/tailwindcss.png' },
+    { name: 'Flask', icon: '/icons/flask.png' },
+    { name: 'Bootstrap', icon: '/icons/bootstrap.png' },
+    { name: 'DaisyUI', icon: '/icons/daisyui.png' },
+    { name: 'ShadCN', icon: '/icons/shadcn.png' },
+    { name: 'Wordpress', icon: '/icons/wordpress.png' },
+    { name: 'Webpack', icon: '/icons/webpack.png' },
   ];

@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 const containerVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -32,10 +33,12 @@ const AboutOverview = () => {
                     </p>
                 </motion.div>
                 <motion.div className="md:w-1/2 p-8 flex justify-center items-center" variants={itemVariants}>
-                    <img
-                        src="images/me.png"
+                    <Image
+                        src="/images/me.png"
                         alt="Profile"
-                        className="w-3/4 h-auto max-w-xs rounded-lg shadow-lg"
+                        width={400}
+                        height={400}
+                        className="rounded-lg shadow-lg"
                     />
                 </motion.div>
             </motion.div>

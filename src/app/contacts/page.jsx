@@ -1,6 +1,6 @@
 import React from 'react';
-import ContactForm from '@/components/Contacts/ContactForm';
-import Faq from '@/components/Contacts/Faq';
+import ContactForm from '@/components/contacts/ContactForm';
+import Faq from '@/components/contacts/Faq';
 
 const ContactOverview = () => {
     return (
