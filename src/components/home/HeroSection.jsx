@@ -27,7 +27,8 @@ export const HeroSection = () => {
     const isInView = useInView(ref, { once: false });
 
     return (
-        <section id="home" className="relative px-4 md:px-10">
+        <section id="home" className="relative px-4 md:px-10 border-b border-cyan-300">
+            <div class="absolute inset-0 z-[-1] h-full w-full bg-transparent bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"/>
             <motion.div
                 ref={ref}
                 className="min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-between text-left"
@@ -40,7 +41,8 @@ export const HeroSection = () => {
                         Hello, I'm <span className="text-cyan-300">Keiru</span>
                     </motion.h1>
                     <motion.h2 className="text-lg md:text-xl text-gray-500 font-semibold mb-4" variants={itemVariants}>
-                        A passionate <span className='text-cyan-300'>full stack developer</span> in the Philippines.
+                        A passionate <span className='text-cyan-300'>full stack developer</span>
+                        <br/>in the Philippines.
                     </motion.h2>
                     <div className="flex flex-wrap justify-start space-x-2 mt-5">
                         <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">

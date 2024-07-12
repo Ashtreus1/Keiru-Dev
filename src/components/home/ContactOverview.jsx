@@ -57,14 +57,15 @@ const ContactOverview = () => {
     };
 
     return (
-        <section className='mb-10' ref={ref}>
+        <section className='relative border-t border-cyan-500' ref={ref}>
+            <div class="absolute inset-0 z-[-1] h-full w-full bg-transparent bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"/>
             <motion.div
                 className="mx-4 md:mx-20"
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
                 variants={containerVariants}
             >
-                <motion.div className="p-4" variants={itemVariants}>
+                <motion.div className="p-4 mt-5" variants={itemVariants}>
                     <h2 className="text-3xl md:text-5xl font-bold font-mono text-center mb-4">Interact with Me</h2>
                     <p className="text-center mb-8">
                         I'm always open to discuss new projects, <br />
@@ -80,7 +81,7 @@ const ContactOverview = () => {
                                     <input
                                         type="text"
                                         name="name"
-                                        className="grow p-5"
+                                        className="grow p-5 rounded-md"
                                         placeholder="Name"
                                         value={formState.name}
                                         onChange={handleChange}
@@ -92,7 +93,7 @@ const ContactOverview = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        className="grow p-5"
+                                        className="grow p-5 rounded-md"
                                         placeholder="Email"
                                         value={formState.email}
                                         onChange={handleChange}
@@ -114,18 +115,18 @@ const ContactOverview = () => {
                         </form>
                         {status && <p className="text-center mt-4">{status}</p>}
                     </motion.div>
-                    <motion.div className="w-full md:w-1/2 p-4 flex flex-col justify-center items-center mb-20" variants={itemVariants}>
+                    <motion.div className="w-full md:w-1/2 p-4 flex flex-col justify-center items-center mb-20"  variants={itemVariants}>
                         <h2 className="text-3xl text-cyan-500 font-bold text-center mb-4 hidden md:block">Contact me with</h2>
-                        <div className="hidden md:flex gap-4 items-center">
-                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-500 flex items-center gap-2">
+                        <div className="hidden md:flex gap-4 items-center mt-5 border-b border-cyan-500 pb-3">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-500 flex items-center gap-2 transition-colors">
                                 <FaFacebook className="w-6 h-6" />
                                 Facebook
                             </a>
-                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-500 flex items-center gap-2">
+                            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-500 flex items-center gap-2 transition-colors">
                                 <FaTwitter className="w-6 h-6" />
                                 Twitter
                             </a>
-                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-500 flex items-center gap-2">
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-500 flex items-center gap-2 transition-colors">
                                 <FaInstagram className="w-6 h-6" />
                                 Instagram
                             </a>
