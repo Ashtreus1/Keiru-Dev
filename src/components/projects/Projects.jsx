@@ -34,7 +34,7 @@ const Projects = () => {
     const filteredProjects = activeCategory === 'All' ? projectData : projectData.filter(project => project.tab_categories.includes(activeCategory));
 
     return (
-        <div className="flex flex-col items-center py-8 mx-10">
+        <div className="flex flex-col items-center py-8">
             <div className="tabs tabs-lifted mb-8">
                 {['All', 'Mobile', 'Desktop', 'Web'].map((category, index) => (
                     <label
@@ -55,7 +55,7 @@ const Projects = () => {
                 </div>
             ) : (
                 <motion.div
-                    className="flex flex-wrap justify-center px-4"
+                    className="flex flex-wrap justify-center"
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
