@@ -34,7 +34,8 @@ const Projects = () => {
     const filteredProjects = activeCategory === 'All' ? projectData : projectData.filter(project => project.tab_categories.includes(activeCategory));
 
     return (
-        <div className="flex flex-col items-center py-8 overflow-x-hidden">
+        <div className="relative flex flex-col items-center py-8 overflow-x-hidden">
+            <div class="absolute inset-0 z-[-1] h-full w-full bg-transparent bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"/>
             <div className="tabs tabs-lifted mb-8">
                 {['All', 'Mobile', 'Desktop', 'Web'].map((category, index) => (
                     <label
@@ -65,8 +66,7 @@ const Projects = () => {
                             key={index}
                             className="w-full sm:w-1/2 lg:w-1/3 p-4 flex justify-center"
                             variants={itemVariants}>
-                            <div
-                                className="card bg-base-100 shadow-xl p-4">
+                            <div className="card bg-base-100 shadow-md shadow-cyan-700 p-4">
                                 <figure className="relative">
                                     <Image
                                         src={project.image}
