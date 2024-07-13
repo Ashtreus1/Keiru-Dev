@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion, useInView } from "framer-motion";
 import React from 'react';
 
@@ -37,25 +37,25 @@ const WorkExperience = () => {
   const isInView = useInView(ref, { once: false });
 
   return (
-    <div className="min-h-screen p-6 flex items-center justify-center">
+    <div className="flex justify-center">
       <motion.div
-        className="w-full max-w-5xl"
+        className="w-full max-w-5xl px-4 mb-10"
         ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={containerVariants}
       >
-        <motion.h2 className="text-4xl font-bold mb-8" variants={itemVariants}>
+        <motion.h2 className="text-4xl font-mono font-bold mb-8 text-center" variants={itemVariants}>
           Work Experience
         </motion.h2>
         {workExperienceData.map((item, index) => (
           <motion.div
             key={index}
             tabIndex={0}
-            className="collapse collapse-plus border border-base-300 bg-base-200 mb-4 rounded-lg shadow-lg"
+            className="collapse collapse-plus bg-base-200 mb-4 rounded-lg shadow-lg shadow-cyan-700 border-b border-cyan-300"
             variants={itemVariants}
           >
-            <motion.div className="collapse-title text-xl font-medium" variants={itemVariants}>
+            <motion.div className="collapse-title text-xl font-medium font-mono" variants={itemVariants}>
               {item.title}: <span className="text-cyan-500">{item.date}</span>
             </motion.div>
             <motion.div className="collapse-content p-4" variants={itemVariants}>

@@ -1,6 +1,6 @@
 export const Footer = () => {
     return (
-        <footer className="border-t border-cyan-500">
+        <footer className="shadow-lg shadow-cyan-500">
             <div className="container mx-auto py-8 flex flex-col lg:flex-row items-center justify-between">
                 <div className="flex flex-col lg:flex-row items-center">
                     <h2 className="text-2xl font-bold">Keiru Dev</h2>

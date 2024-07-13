@@ -29,7 +29,7 @@ const EducationTimeline = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center mx-10">
       <motion.h1
-        className="text-4xl font-bold mb-8"
+        className="text-4xl font-mono font-bold mb-8"
         variants={textVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
@@ -58,9 +58,9 @@ const EducationTimeline = () => {
               />
             </svg>
           </motion.div>
-          <motion.div className="timeline-start md:text-end mb-10" variants={textVariants}>
+          <motion.div className="timeline-start md:text-end mb-10 border border-cyan-300 p-5 rounded-sm cursor-pointer hover:bg-black transition-colors" variants={textVariants}>
             <time className="font-mono italic text-cyan-500">Senior Highschool Level</time>
-            <div className="text-lg font-black">
+            <div className="text-lg font-black font-mono">
               Information and Communication Technology Strand Major in Computer Programming
             </div>
             <p>
@@ -87,9 +87,9 @@ const EducationTimeline = () => {
               />
             </svg>
           </motion.div>
-          <motion.div className="timeline-end mb-10" variants={textVariants}>
+          <motion.div className="timeline-end mb-10 border border-cyan-300 p-5 rounded-sm cursor-pointer hover:bg-black transition-colors" variants={textVariants}>
             <time className="font-mono italic text-cyan-500">Bachelor Degree (Present)</time>
-            <div className="text-lg font-black">Bachelor of Science in Information Technology</div>
+            <div className="text-lg font-black font-mono">Bachelor of Science in Information Technology</div>
             <p>
               Currently pursuing Bachelor of Science in Information Technology as my course
               program. Sophomore year in this present day, and have the commitment to pursue the

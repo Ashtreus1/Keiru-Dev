@@ -69,34 +69,44 @@ const ContactForm = () => {
     >
       <motion.form variants={formVariants} onSubmit={sendEmail} ref={form}>
         <motion.div className="mb-4" variants={formVariants}>
-          <label className="input input-bordered rounded-btn flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70">
-              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
-            </svg>
-            <input type="text" className="grow" name="name" placeholder="Name" value={formState.name}
-              onChange={handleChange} />
+          <label className="input-bordered rounded-btn flex items-center gap-2">
+            <input
+              type="text"
+              name="name"
+              className="grow p-5 rounded-md"
+              placeholder="Name"
+              value={formState.name}
+              onChange={handleChange}
+            />
           </label>
         </motion.div>
         <motion.div className="mb-4" variants={formVariants}>
-          <label className="input input-bordered flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70">
-              <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-              <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-            </svg>
-            <input type="text" className="grow" name="email" placeholder="Email" value={formState.email}
-              onChange={handleChange} />
+          <label className="input-bordered flex items-center gap-2">
+            <input
+              type="email"
+              name="email"
+              className="grow p-5 rounded-md"
+              placeholder="Email"
+              value={formState.email}
+              onChange={handleChange}
+            />
           </label>
         </motion.div>
         <motion.div className="mb-4" variants={formVariants}>
-          <textarea className="textarea textarea-bordered w-full" placeholder="Message" name="message" value={formState.message}
-            onChange={handleChange}></textarea>
+          <textarea
+            name="message"
+            className="textarea-bordered p-5 rounded-md w-full"
+            placeholder="Message"
+            value={formState.message}
+            onChange={handleChange}
+          ></textarea>
         </motion.div>
-        <motion.button className="btn btn-wide hover:bg-cyan-400 hover:text-black transition-color" variants={buttonVariants}>
+        <button className="btn-wide rounded-md py-4 font-semibold border border-cyan-500 bg-transparent hover:bg-cyan-700 transition-all duration-300 ease-in-out">
           Send Message
-        </motion.button>
+        </button>
       </motion.form>
       {status && <p className="text-center mt-4">{status}</p>}
-      <motion.div className="absolute right-4 mt-5 flex gap-4" variants={socialLinkVariants}>
+      <motion.div className="absolute right-4 mt-5 flex gap-4 border-b border-cyan-500 pb-5" variants={socialLinkVariants}>
         <motion.a href="#" className="text-gray-500 hover:text-cyan-500 flex items-center gap-2" variants={socialLinkVariants}>
           <FaFacebook className="w-6 h-6" />
           Facebook

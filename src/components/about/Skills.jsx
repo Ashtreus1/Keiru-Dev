@@ -31,21 +31,21 @@ const Skills = () => {
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      <motion.h1 className="text-4xl font-bold mb-8 text-center" variants={textVariants}>
+      <motion.h1 className="text-4xl font-mono font-bold mb-12 text-center " variants={textVariants}>
         Technologies I've Used
       </motion.h1>
       <motion.div
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
         variants={containerVariants}
       >
         {techStack.map((tech, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center text-center p-4 transition-transform transform hover:scale-105 hover:bg-cyan-700 cursor-pointer"
+            className="flex flex-col items-center text-center p-4 bg-transparent shadow-lg rounded-lg  hover:text-cyan-300 hover:shadow-cyan-500 cursor-pointer"
             variants={itemVariants}
           >
-            <Image src={tech.icon} alt={tech.name}  width={48} height={48}  className="mb-2" />
-            <h2 className="text-sm font-semibold">{tech.name}</h2>
+            <Image src={tech.icon} alt={tech.name} width={64} height={64} className="mb-4" />
+            <h2 className="text-lg font-mono font-semibold">{tech.name}</h2>
           </motion.div>
         ))}
         <motion.div
