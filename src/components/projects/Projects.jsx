@@ -55,7 +55,7 @@ const Projects = () => {
                 </div>
             ) : (
                 <motion.div
-                    className="flex flex-wrap justify-center px-4 mx-5"
+                    className="flex flex-wrap justify-center px-4"
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
@@ -73,7 +73,7 @@ const Projects = () => {
                                         alt={project.title}
                                         width={500}
                                         height={320}
-                                        className="max-w-[400px] h-64 object-cover"
+                                        className="max-w-[350px] h-64 object-cover"
                                     />
                                     <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-50 flex items-center justify-center">
                                         {project.live_prev !== null && project.live_prev !== '' ? (
