@@ -73,7 +73,7 @@ const Projects = () => {
                                         alt={project.title}
                                         width={500}
                                         height={320}
-                                        className="w-full h-64 object-cover"
+                                        className="max-w-[400px] h-64 object-cover"
                                     />
                                     <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-50 flex items-center justify-center">
                                         {project.live_prev !== null && project.live_prev !== '' ? (
