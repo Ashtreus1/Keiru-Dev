@@ -55,7 +55,7 @@ const Projects = () => {
                 </div>
             ) : (
                 <motion.div
-                    className="flex flex-wrap justify-center px-4"
+                    className="flex flex-wrap justify-center px-4 mx-5"
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
