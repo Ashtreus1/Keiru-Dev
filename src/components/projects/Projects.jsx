@@ -55,21 +55,23 @@ const Projects = () => {
                 </div>
             ) : (
                 <motion.div
-                    className="grid grid-cols-3 gap-4 justify-items-center"
+                    className="flex flex-wrap justify-center px-4"
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
                 >
                     {filteredProjects.map((project, index) => (
-                            <motion.div 
+                        <motion.div
                             key={index}
-                            variants={itemVariants}
-                            className="card bg-base-100 shadow-xl p-4 relative w-full">
+                            className="w-full sm:w-1/2 lg:w-1/3 p-4 flex justify-center"
+                            variants={itemVariants}>
+                            <div
+                                className="card bg-base-100 shadow-xl p-4">
                                 <figure className="relative">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
-                                        width={500} 
+                                        width={500}
                                         height={320}
                                         className="w-full h-64 object-cover"
                                     />
@@ -102,7 +104,8 @@ const Projects = () => {
                                         ))}
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
+                        </motion.div>
                     ))}
                 </motion.div>
             )}
