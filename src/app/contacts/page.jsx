@@ -1,9 +1,16 @@
 import React from 'react';
 import ContactForm from '@/components/contacts/ContactForm';
+import Dots from '@/components/decorations/Dots';
 
 const ContactOverview = () => {
     return (
-        <div className="min-h-screen flex flex-col justify-center items-center pb-10 mb-10 mx-10">
+        <div className="min-h-screen relative flex flex-col justify-center items-center pb-10 mb-10 mx-10">
+            <div className="absolute right-10 top-[50px] md:right-20 md:top-[90px] z-[-1]">
+                <Dots h="150" w="150" />
+            </div>
+            <div className="absolute left-10 bottom-[50px] md:left-20 md:bottom-[90px] z-[-1]">
+                <Dots h="150" w="150" />
+            </div>
             <div className="mx-4 md:mx-20 w-full">
                 <h2 className="text-4xl font-mono md:text-5xl font-bold mb-4 mt-10">Interact with Me!</h2>
                 <div className="flex flex-col md:flex-row justify-center gap-10">

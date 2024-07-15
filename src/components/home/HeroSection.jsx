@@ -37,7 +37,7 @@ export const HeroSection = () => {
                 variants={containerVariants}
             >
                 <div className="flex-1 flex flex-col justify-center">
-                    <motion.h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-mono mb-4" variants={itemVariants}>
+                    <motion.h1 className="text-4xl sm:text-5xl lg:no-underline sm:underline sm:decoration-cyan-500 md:underline md:decoration-cyan-500 md:text-6xl  font-bold font-mono mb-4" variants={itemVariants}>
                         Hello, I'm <span className="text-cyan-300">Keiru</span>
                     </motion.h1>
                     <motion.h2 className="text-lg md:text-xl text-gray-500 font-semibold mb-4" variants={itemVariants}>
@@ -69,9 +69,9 @@ export const HeroSection = () => {
                     <div className="flex flex-row items-center justify-start mt-5 space-x-2">
                         <h3 className="text-lg">Made with</h3>
                         <div className="flex flex-row gap-3">
-                            <Image src="/icons/react.png" width={30} height={30} alt="React" className="rounded-full opacity-75 border-2 border-dashed border-black" />
-                            <Image src="/icons/daisyui.png" width={30} height={30} alt="DaisyUI" className="rounded-full opacity-75 border-2 border-dashed border-black" />
-                            <Image src="/icons/tailwindcss.png" width={30} height={30} alt="Tailwind CSS" className="rounded-full opacity-75 border-2 border-dashed border-black" />
+                            <Image src="/icons/react.png" width={50} height={50} alt="React" className="rounded-full opacity-75 border-2 border-dashed border-black p-2" />
+                            <Image src="/icons/daisyui.png" width={50} height={50} alt="DaisyUI" className="rounded-full opacity-75 border-2 border-dashed border-black p-2" />
+                            <Image src="/icons/tailwindcss.png" width={50} height={50} alt="Tailwind CSS" className="rounded-full opacity-75 border-2 border-dashed border-black p-2" />
                         </div>
                     </div>
                 </div>

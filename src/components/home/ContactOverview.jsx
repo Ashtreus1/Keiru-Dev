@@ -2,6 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { motion, useInView } from 'framer-motion';
+import Dots from '../decorations/Dots';
 import emailjs from '@emailjs/browser';
 
 
@@ -58,7 +59,12 @@ const ContactOverview = () => {
 
     return (
         <section className='relative border-t border-cyan-500' ref={ref}>
-            <div class="absolute inset-0 z-[-1] h-full w-full bg-transparent bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"/>
+            <div className="absolute right-10 top-[50px] md:right-20 md:top-[90px] z-[-1]">
+                <Dots h="150" w="150" />
+            </div>
+            <div className="absolute left-10 bottom-[50px] md:left-20 md:bottom-[90px] z-[-1]">
+                <Dots h="150" w="150" />
+            </div>
             <motion.div
                 className="mx-4 md:mx-20"
                 initial="hidden"

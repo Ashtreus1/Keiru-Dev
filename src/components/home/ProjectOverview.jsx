@@ -21,7 +21,8 @@ const ProjectOverview = () => {
     const isInView = useInView(ref, { once: false });
 
     return (
-        <section className="py-16 relative" ref={ref}>
+        <section className="py-16 relative border-t border-cyan-500" ref={ref}>
+            <div class="absolute inset-0 z-[-1] h-full w-full bg-transparent bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"/>
             <motion.div
                 className="flex flex-col items-center"
                 initial="hidden"
@@ -42,11 +43,11 @@ const ProjectOverview = () => {
                 variants={containerVariants}
             >
                 {projectData.map((project, index) => (
-                    <motion.div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-4 flex justify-center" variants={itemVariants}>
+                    <motion.div key={index} className="max-w-[400px] sm:w-1/2 lg:w-1/3 p-4 flex justify-center" variants={itemVariants}>
                         <div className="card bg-base-100 shadow-md shadow-cyan-700 p-4 relative w-full">
                             <figure className="relative">
                                 <Image src={project.image} alt={project.title} width={500}
-                                    height={320} className="w-full h-64 object-cover" />
+                                    height={320} className="w-full h-40 object-cover" />
                                 <div className="overlay absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-50 flex items-center justify-center">
                                     <Link href={project.repo_link}>
                                         <FaGithub className="text-white h-10 w-10 cursor-pointer hover:text-cyan-400 transition-colors" />
